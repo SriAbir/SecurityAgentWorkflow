@@ -1,0 +1,9 @@
+{
+  "ID": "case_004",
+  "filename": "internal_CVE-2026-5778.c",
+  "language": "C",
+  "CWE_type": "CWE-191: Integer Underflow (Wrap or Wraparound)",
+  "Severity": "LOW",
+  "Error_Line_Number": [20022]
+
+}

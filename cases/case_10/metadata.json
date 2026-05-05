@@ -1,0 +1,9 @@
+{
+  "ID": "case_10",
+  "filename": "CVE-2026-31964_cram_codec.c",
+  "language": "C",
+  "CWE_type": "CWE-476:NULL Pointer Dereference",
+  "Severity": "MEDIUM",
+  "Error_Line_Number": [1421, 2128]
+
+}

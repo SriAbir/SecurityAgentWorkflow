@@ -1,0 +1,12 @@
+{
+  "ID": "case_001",
+  "filename": "vulnerable_code.py",
+  "language": "Python",
+  "CWE_type": "CWE-918: Server-Side Request Forgery (SSRF)",
+  "Severity": "MEDIUM",
+  "Error_Line_Number": [610],
+  "Vulnerability_Details": "A Server-Side Request Forgery (SSRF) vulnerability exists in Agent Zero's document query functionality. When a user asks the agent to fetch and analyze a document from a URL, the agent makes HTTP requests to the specified target without any URL validation. This allows an attacker to, Access internal network services (Redis, MongoDB, internal APIs) Steal cloud credentials from AWS/GCP/Azure metadata endpoints Perform port scanning and network reconnaissance Exfiltrate data from services not exposed to the internet. This is NOT a Blind SSRF - the agent returns the full HTTP response content to the attacker, including error messages, directory listings, and data from internal services.",
+  "Impact": "Cloud credential theft from AWS/GCP/Azure metadata endpoints (x.x.x.x), Access to internal network services (Redis, MongoDB, internal APIs), Network reconnaissance and port scanning from within the trusted network, Data exfiltration from services not exposed to the internet",
+  "Recommended_Fix": "Add URL validation before making HTTP requests",
+  "fixed_code": "corrected_code.py"
+}

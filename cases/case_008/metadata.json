@@ -1,0 +1,9 @@
+{
+  "ID": "case_007",
+  "filename": "webhookCVE-2026-34608.c",
+  "language": "C",
+  "CWE_type": "CWE-125:Out-of-bounds Read",
+  "Severity": "MEDIUM",
+  "Error_Line_Number": [417]
+
+}

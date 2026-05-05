@@ -1,0 +1,9 @@
+{
+  "ID": "case_009",
+  "filename": "internal_pxr24_CVE-2026-34380.c",
+  "language": "C",
+  "CWE_type": "CWE-125:Out-of-bounds Read, CWE-190:Integer Overflow or Wraparound",
+  "Severity": "MEDIUM",
+  "Error_Line_Number": [387]
+
+}

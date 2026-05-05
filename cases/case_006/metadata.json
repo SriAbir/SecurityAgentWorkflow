@@ -1,0 +1,9 @@
+{
+  "ID": "case_006",
+  "filename": "CVE-2026-39855.c",
+  "language": "C",
+  "CWE_type": "CWE-191: Integer Underflow (Wrap or Wraparound), CWE-125: Out-of-bounds Read",
+  "Severity": "MEDIUM",
+  "Error_Line_Number": [1050]
+
+}

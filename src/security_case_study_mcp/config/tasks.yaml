@@ -1,0 +1,108 @@
+analyze_vulnerability:
+  description: >
+    You are given vulnerable source code and static planner hints.
+
+    Source code:
+    {code}
+
+    Static planner hints:
+    {planner_hints}
+
+    Your role is to perform the technical diagnosis.
+    Use the static planner hints only as guidance.
+    You may use the CodeQL MCP tools to gather additional static-analysis evidence.
+
+    Do not blindly trust either the planner hints or the CodeQL results.
+    Independently confirm whether the vulnerability truly exists by checking the code,
+    the relevant data/bounds/API usage, and the reported location.
+
+    If CodeQL findings and planner hints disagree, resolve the disagreement using your own reasoning.
+    Prefer the actual code over tool output when they conflict.
+    Do not propose a patch.
+
+    Return only these fields:
+    1. Vulnerability type
+    2. CWE-ID
+    3. Vulnerable line(s) or code region
+    4. Root cause explanation
+    5. Relevant input-to-sink or input-to-dangerous-operation flow
+    6. Security impact
+    7. Severity (HIGH, MEDIUM, or LOW)
+    8. Tool evidence used (list the CodeQL MCP tools used and what each contributed)
+    9. Confidence level
+
+    Be specific and commit to one primary vulnerability unless the code clearly contains multiple independent issues.
+  expected_output: >
+    A structured vulnerability analysis containing the final vulnerability type,
+    CWE-ID, vulnerable region, root cause, a short flow explanation, impact,
+    severity, and confidence.
+  agent: security_analyzer
+
+propose_fix:
+  description: >
+    You are given the vulnerable source code and prior analysis context.
+
+    Source code:
+    {code}
+
+    Your role is to produce a minimal secure patch for the diagnosed vulnerability.
+    Do not restate the entire analysis.
+
+    Return only these fields:
+    1. Patched code
+    2. Unsafe behavior removed
+    3. Security control or validation added
+    4. Why the patch removes the root cause
+
+    Keep the fix as small and targeted as possible.
+  expected_output: >
+    A patched code version with a concise explanation of the unsafe behavior removed,
+    the protection added, and why the root cause is addressed.
+  agent: security_fixer
+
+verify_fix:
+  description: >
+    You are given the original source code and prior task context.
+
+   
+    Source code:
+    {code}
+
+    Your role is to independently verify whether the proposed patch fixes the
+    vulnerability identified by the Analyzer.
+
+    Verify all of the following:
+    1. Whether the Fixer addressed the same vulnerability identified by the Analyzer
+    2. Whether the root cause is removed, not just the symptom
+    3. Whether the unsafe input-to-sink path is broken
+    4. Whether attacker-controlled input can still reach the dangerous operation
+    5. Whether any residual risk or obvious bypass remains
+    6. Whether the patch introduces regressions or inconsistent logic
+    
+
+    Also design verification tests that would check:
+    7. Normal expected behavior still works
+    8. Malicious or adversarial inputs are blocked
+    9. Obvious bypass variants are blocked
+    10.No new security weakness is introduced by the patch
+
+    Return only these fields:
+    1. Verification verdict (fixed / partially fixed / not fixed)
+    2. Root cause removed? (yes / no / partially)
+    3. Attack path blocked? (yes / no / partially)
+    4. Residual risk
+    5. Regression or correctness concerns
+    6. Short justification
+    7. Verification test cases
+    8. Confidence level
+    9. Detected CWE: one line
+    10. Security patch suggestion: one line
+
+    Do not compare against external ground truth.
+    Do not summarize the whole pipeline.
+    Focus only on whether the proposed patch actually fixes the diagnosed issue.
+  expected_output: >
+    A verification report stating whether the patch fixes the diagnosed vulnerability,
+    whether the root cause and attack path are removed, whether residual risk remains,
+    and ending with a one-line CWE summary and one-line patch suggestion.
+  agent: security_verifier

@@ -1,0 +1,9 @@
+{
+  "ID": "case_12",
+  "filename": "CVE-2019-6439_tls_bench.c",
+  "language": "C",
+  "CWE_type": "CWE-476:NULL Pointer Dereference",
+  "Severity": "MEDIUM",
+  "Error_Line_Number": [1421, 2128]
+
+}

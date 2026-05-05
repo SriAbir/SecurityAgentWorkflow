@@ -1,0 +1,9 @@
+{
+  "ID": "case_13",
+  "filename": "CVE-2026-34544_internal_b44.c",
+  "language": "C",
+  "CWE_type": "CWE-476:NULL Pointer Dereference",
+  "Severity": "MEDIUM",
+  "Error_Line_Number": [1421, 2128]
+
+}

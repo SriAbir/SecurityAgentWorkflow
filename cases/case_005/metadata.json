@@ -1,0 +1,9 @@
+{
+  "ID": "case_005",
+  "filename": "sniffer_CVE-2026-1005.c",
+  "language": "C",
+  "CWE_type": "CWE-191: Integer Underflow (Wrap or Wraparound)",
+  "Severity": "LOW",
+  "Error_Line_Number": [4908,4928]
+
+}

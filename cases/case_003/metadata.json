@@ -1,0 +1,9 @@
+{
+  "ID": "case_003",
+  "filename": "tls_CVE-2026-3547.c",
+  "language": "C",
+  "CWE_type": "CWE-125: Out-of-bounds Read",
+  "Severity": "HIGH",
+  "Error_Line_Number": [2030]
+
+}

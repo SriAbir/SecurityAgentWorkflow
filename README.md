@@ -52,3 +52,7 @@ For support, questions, or feedback regarding the SecurityCaseStudyMcp Crew or c
 - [Chat with our docs](https://chatg.pt/DWjSBZn)
 
 Let's create wonders together with the power and simplicity of crewAI.
+
+## Vulnerability Data
+
+The cases folder contains each vulnerability case as sub-folder. E.g., Case_001 contains the vulnerable code file, the meatadata for the CVE and the output text files containing the workflow output for each model

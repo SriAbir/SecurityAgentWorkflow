@@ -56,3 +56,6 @@ Let's create wonders together with the power and simplicity of crewAI.
 ## Vulnerability Data
 
 The cases folder contains each vulnerability case as sub-folder. E.g., Case_001 contains the vulnerable code file, the meatadata for the CVE and the output text files containing the workflow output for each model
+
+## Prompt
+The prompts fro Analyzer, Fixer and Verifier are present in the \src\security_case_study_mcp\config file 
